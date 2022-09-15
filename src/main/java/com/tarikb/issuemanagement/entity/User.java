@@ -7,11 +7,10 @@ import java.util.List;
 
 @Entity
 @Table(name = "users")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor //boş constructor oluşturmak için
 @AllArgsConstructor //tüm fieldlar kullanılarak yapılan constructor
-@ToString //nesnelerin toString metodunu override ediyor.
-@EqualsAndHashCode
 public class User extends BaseEntitiy {
 
     @Id

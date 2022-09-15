@@ -19,6 +19,5 @@ public interface ProjectRepository extends JpaRepository<Project,Long> {
     // sıralama sorting kayıtlar üzerinde
     List<Project> findAll(Sort sort);
 
-
     Project getByProjectCodeAndIdNot(String projectCode, Long id);
 }

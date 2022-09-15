@@ -29,7 +29,7 @@ public class IssueHistoryServiceImpl implements IssueHistoryService{
 
     @Override
     public IssueHistory getById(Long id) {
-        return issueHistoryRepository.getReferenceById(id);
+        return issueHistoryRepository.getOne(id);
     }
 
     @Override

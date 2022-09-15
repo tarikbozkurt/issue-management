@@ -2,6 +2,7 @@ package com.tarikb.issuemanagement.service;
 
 import com.tarikb.issuemanagement.dto.ProjectDto;
 import com.tarikb.issuemanagement.entity.Project;
+import com.tarikb.issuemanagement.util.Tpage;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -14,11 +15,11 @@ public interface ProjectService {
 
     ProjectDto getByProjectCode(String projectCode);
 
-    List<Project> getByProjectCodeContains(String projectCode);
+    List<ProjectDto> getByProjectCodeContains(String projectCode);
 
-    Page<Project> getAllPageable(Pageable pageable);
+    Tpage<ProjectDto> getAllPageable(Pageable pageable);
 
-    Boolean delete(Project project);
+    Boolean delete(ProjectDto project);
 
     ProjectDto update(Long id, ProjectDto project);
 }

@@ -8,11 +8,10 @@ import java.util.Date;
 
 @Entity
 @Table(name = "issue_history")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-@EqualsAndHashCode
 public class IssueHistory extends BaseEntitiy{
 
     @Id

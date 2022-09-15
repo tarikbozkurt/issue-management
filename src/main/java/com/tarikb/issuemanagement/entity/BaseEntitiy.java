@@ -13,9 +13,10 @@ import java.util.Date;
 
 
 
-@MappedSuperclass //Diğer classlardan extend edilebileceğini sağlar
+ //Diğer classlardan extend edilebileceğini sağlar
 @Getter
 @Setter
+@MappedSuperclass
 public abstract class BaseEntitiy implements Serializable {
     //abstract yaptık çünli override etmek isteyebiliriz.
     // Tüm tablolarda ortak olarak kullanacağım özellikler..

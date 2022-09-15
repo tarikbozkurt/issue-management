@@ -8,11 +8,10 @@ import java.util.Date;
 
 @Entity
 @Table(name = "issue")
-@Data
-@NoArgsConstructor //boş constructor oluşturmak için
-@AllArgsConstructor //tüm fieldlar kullanılarak yapılan constructor
-@ToString //nesnelerin toString metodunu override ediyor.
-@EqualsAndHashCode
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Issue extends BaseEntitiy {
 
     @Id
