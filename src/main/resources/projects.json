@@ -1,0 +1,17 @@
+[
+  {
+    "_class": "com.tarikb.issuemanagement.entity.Project",
+    "projectCode": "IM-7",
+    "projectName" : "Issue Management Project"
+  },
+  {
+    "_class": "com.tarikb.issuemanagement.entity.Project",
+    "projectCode": "ERP-S-7",
+    "projectName" : "ERP Project for Sales"
+  },
+  {
+    "_class": "com.tarikb.issuemanagement.entity.Project",
+    "projectCode": "CRM-S-7",
+    "projectName" : "CRM Project for Sales"
+  }
+]

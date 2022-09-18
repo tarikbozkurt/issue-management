@@ -45,6 +45,7 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public ProjectDto getById(Long id) {
+
         Project p = projectRepository.getOne(id);
         return modelMapper.map(p,ProjectDto.class);
 
@@ -62,8 +63,8 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public Tpage<ProjectDto> getAllPageable(Pageable pageable) {
-        Page<Project> data = projectRepository.findAll(pageable);
-    Tpage<ProjectDto> response = new Tpage<ProjectDto>();
+    Page<Project> data = projectRepository.findAll(pageable);
+    Tpage<ProjectDto> response = new Tpage<>();
     response.setStat(data, Arrays.asList(modelMapper.map(data.getContent(),ProjectDto[].class)));
     return response;
 

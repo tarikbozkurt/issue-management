@@ -4,16 +4,22 @@ package com.tarikb.issuemanagement.api;
 import com.tarikb.issuemanagement.dto.ProjectDto;
 import com.tarikb.issuemanagement.service.impl.ProjectServiceImpl;
 import com.tarikb.issuemanagement.util.ApiPaths;
+import com.tarikb.issuemanagement.util.Tpage;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+
+
 @RestController
 @RequestMapping(ApiPaths.projectCtrl.CTRL)
-@Api(value = "Project APIs")
+@Api(value = ApiPaths.projectCtrl.CTRL)
+@Slf4j
 public class ProjectController {
 
     /**
@@ -31,10 +37,22 @@ public class ProjectController {
     }
 
 
+    @GetMapping("/pagination")
+    @ApiOperation(value = "Get By Pagination Operation",response = ProjectDto.class)
+    public ResponseEntity<Tpage<ProjectDto>> getAllByPagination(Pageable pageable) {
+        Tpage<ProjectDto> data = projectServiceImpl.getAllPageable(pageable);
+        return ResponseEntity.ok(data);
+
+    }
+
+
+
     @GetMapping("/{id}")
     @ApiOperation(value = "Get By Id Operation",response = ProjectDto.class)
     public ResponseEntity<ProjectDto> getById(@PathVariable(value = "id",required = true) Long id) {
         /* servisimiz " projectServiceImpl " gelen id yi gidip getirecek ve projectDto geri dönderecek.. b*/
+        log.info("Project Controller - > GetByID "+id);
+        log.debug("Project Controller - > GetByID -> PARAM: "+id);
         ProjectDto projectDto = projectServiceImpl.getById(id);
         return ResponseEntity.ok(projectDto);
     }

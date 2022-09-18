@@ -31,8 +31,6 @@ public class Tpage<T> {
         this.totalElements = page.getTotalElements();
         this.content = list;
 
-
-
     }
 
 
